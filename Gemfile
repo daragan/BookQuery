@@ -12,9 +12,12 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'corneal'
+gem 'json'
+gem 'rest-open-uri'
 
 group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'rack-test'
+  gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
