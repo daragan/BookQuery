@@ -7,3 +7,4 @@ require './config/environment'
 run ApplicationController
 use UserController
 use BooksController
+use SearchController

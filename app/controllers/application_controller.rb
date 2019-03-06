@@ -1,5 +1,8 @@
 require './config/environment'
 require 'rack-flash'
+require 'json'
+require 'rest-client'
+
 class ApplicationController < Sinatra::Base
   use Rack::Flash
 
