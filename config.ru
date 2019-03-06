@@ -5,3 +5,5 @@ require './config/environment'
 #end
 
 run ApplicationController
+use UserController
+use BooksController
