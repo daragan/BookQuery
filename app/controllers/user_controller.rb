@@ -9,7 +9,7 @@ class UserController < ApplicationController
 
   get '/user/signup' do
     if !logged_in?
-      erb :'/users/signup'
+      erb :'/user/signup'
     else
       redirect to '/home'
     end
@@ -20,16 +20,16 @@ class UserController < ApplicationController
       redirect to '/user/signup'
     elsif Users.all.find { |user| user.username == params[:username] }
       flash[:message] = "This username already belongs to another account"
-      redirect to '/signup'
+      redirect to '/user/signup'
     elsif Users.all.find { |user| user.email == params[:email] }
       flash[:message] = "This email already belongs to another account"
       redirect to '/user/signup'
     else
-      @user = Users.new(:username => params[:username], :email => params[:email], :pasword => params[:password])
+      @user = Users.new(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save
       session[:user_id] = @user_id
       flash[:message] = "You have succesfully registered!"
-      redirect to '/login'
+      redirect to '/user/login'
     end
   end
 
@@ -37,7 +37,7 @@ class UserController < ApplicationController
     if !logged_in?
       erb :'/user/login'
     else
-      redirect to '/home'
+      redirect to '/'
     end
   end
 
@@ -47,7 +47,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect to '/user/login'
     else
-      redirect to '/home'
+      redirect to '/'
     end
   end
 
