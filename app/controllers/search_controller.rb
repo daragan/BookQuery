@@ -1,8 +1,15 @@
-class SearchController < ApplicationController
+require 'json'
+require 'hashie'
+require 'rest-client'
 
-  def search
-   @searched_books = params[:searched_value]
-   @response_body = HTTParty.get("http://openlibrary.org/api/get?key=/b/#{@searched_value}&prettyprint=true")
-   @parsed_response = JSON.load(@response_body)
-  end
+class SearchController < ApplicationController
+  module Openlibrary
+    @API_URL = 'https://openlibrary.org'
+
+    def search(query, params[:searched_value])
+      query_url = "#{@API_URL}/query.json?#{query}"
+      perform_get_request(query_url, params[:searched_value])
+    end
+
+
 end

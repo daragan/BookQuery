@@ -15,6 +15,9 @@ gem 'corneal'
 gem 'json'
 gem 'rack-flash3'
 gem 'httparty'
+gem 'openlibrary'
+gem 'hashie'
+gem 'rest-client'
 
 
 
