@@ -12,6 +12,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "onepasswordtorulethemall"
   end
 
+  get '/search', to: 'searches#show', as 'search'
+
   get "/" do
     erb :home
   end
