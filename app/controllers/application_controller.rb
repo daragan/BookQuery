@@ -1,7 +1,6 @@
 require './config/environment'
 require 'rack-flash'
 require 'json'
-require 'HTTParty'
 
 class ApplicationController < Sinatra::Base
   use Rack::Flash
