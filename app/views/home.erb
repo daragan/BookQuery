@@ -5,9 +5,10 @@
     <title>Welcome to book Query!</title>
   </head>
   <body>
+  <h1>Welcome to Book Query!</h1>
     <form action = "/searches/show" method = "get">
       <div class = "field">
-        <input type = "text" name = "searched_value" alt = "Search for books!!" />
+        <input type = "text" name = "params[:searched_value]" alt = "Search for books!!" />
       </div>
       <div class = "btn">
         <input type = "submit" name ="btn" value = "Search Books">

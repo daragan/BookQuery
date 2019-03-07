@@ -18,6 +18,7 @@ gem 'httparty'
 gem 'openlibrary'
 gem 'hashie'
 gem 'rest-client'
+gem 'faraday'
 
 
 
