@@ -5,14 +5,14 @@
     <title>Welcome to book Query!</title>
   </head>
   <body>
-    <div class="wrap">
-   <div class="search">
-      <input type="search" class="searchTerm" name = "params[:search]" placeholder="Search for your book here!">
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button>
-   </div>
-</div>
+    <form action = "/searches/show" method = "get">
+      <div class = "field">
+        <input type = "text" name = "searched_value" alt = "Search for books!!" />
+      </div>
+      <div class = "btn">
+        <input type = "submit" name ="btn" value = "Search Books">
+      </div>
+    </form>
 
   </body>
 </html>

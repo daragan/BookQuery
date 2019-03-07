@@ -1,6 +1,7 @@
 require './config/environment'
 require 'rack-flash'
 require 'json'
+require 'HTTParty'
 
 class ApplicationController < Sinatra::Base
   use Rack::Flash
@@ -11,8 +12,6 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "onepasswordtorulethemall"
   end
-
-  get '/search', to: 'searches#show', as 'search'
 
   get "/" do
     erb :home
