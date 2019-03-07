@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_093259) do
   create_table "saves", force: :cascade do |t|
     t.string "user_id"
     t.string "books_id"
+    t.string "search"
   end
 
   create_table "users", force: :cascade do |t|

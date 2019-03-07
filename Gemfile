@@ -14,6 +14,7 @@ gem "tux"
 gem 'corneal'
 gem 'json'
 gem 'rack-flash3'
+gem 'httparty'
 
 
 
