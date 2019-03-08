@@ -7,11 +7,10 @@ class SearchController < ApplicationController
   include HTTParty
 
   def search
-    @searched_book = params[:searched_value]
+    @searched_book = params[:searched_value].split(" ").join("+")
     @response_body = Faraday.get("https://openlibrary.org/search.json?q=#{@searched_book}")
     @parsed_response = JSON.load(@response_body)
   end
-
 
   #def request(:searched_value, params={})
   #  @API_URL = 'https://openlibrary.org'
